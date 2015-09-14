@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="school" class="com.spring.test.School" lazy-init="true" scope="prototype">
+        <property name="id" value="1"/>
+        <property name="name" value="武汉理工"/>
+        <property name="aClass" ref="aClass"/>
+    </bean>
+    <bean id="student" class="com.spring.test.Student" init-method="start">
+        <property name="id" value="1"/>
+        <property name="name" value="涂光权"/>
+    </bean>
+    <bean id="aClass" class="com.spring.test.AClass">
+        <property name="id" value="1"/>
+        <property name="name" value="1310"/>
+        <property name="student" ref="student"/>
+    </bean>
+    <bean id="huoDong" class="com.spring.test.HuoDong"/>
+</beans>
